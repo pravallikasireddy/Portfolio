@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <style>
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Body styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    /* Dark-mode Styles */
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #f4f4f4;
+    }
+    body.dark-mode header {
+      background-color: #555;
+    }
+    body.dark-mode header h1{
+      color: #f4f4f4;
+    }
+    
+    body.dark-mode h2 {
+    color: #f4f4f4;
+    font-size: 2em;
+      border-bottom: 2px solid #f4f4f4;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+      text-shadow:
+        0 0 5px #000,
+        0 0 10px #000;
+    }
+    body.dark-mode p{
+  color:#f4f4f4;
+}
+    body.dark-mode .card{
+      background:#1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+
+    }
+    body.dark-mode .card h3{
+      color: #f4f4f4;
+       margin-bottom: 15px;
+      border-bottom: 1px solid #f4f4f4;
+      padding-bottom: 10px;
+
+    }
+
+    body.dark-mode li{
+      color: #f4f4f4;
+    }
+  body.dark-mode .project-card {
+      background: #222;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      width: 400px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+body.dark-mode .project-card:hover{
+      transform: scale(1.05);
+      box-shadow:
+        0 0 10px #fff;
+    }
+body.dark-mode .project-card {
+      background-color: #2c2c2c;
+    
+    }
+
+    .project-details {
+      padding: 15px;
+    }
+body.dark-mode .skill-fill.html {
+  background-color: var(--neon-white);
+}
+
+body.dark-mode .skill-fill.css {
+  background-color: var(--neon-white);
+}
+
+body.dark-mode .skill-fill.js {
+  background-color: var(--neon-white);
+} 
+
+body.dark-mode .skill-fill.Python {
+  background-color: var(--neon-white);
+}
+
+body.dark-mode .skill-fill.JAVA {
+  background-color: var(--neon-white);
+}
+
+body.dark-mode .skill-fill.C {
+  background-color: var(--neon-white);
+}
+
+body.dark-mode #contact p{
+    color: white;
+  }
+body.dark-mode #contact a{
+  color: #fff;
+}
+    
+body.dark-mode footer {
+      background-color:#222;
+      color: #555;
+    }
+
+/* Header styles */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #555;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s;
+      z-index: 999;
+    }
+
+    header h1 {
+      font-size: 2em;
+      color:#f4f4f4;
+    }
+
+    
+ 
+ .nav a {
+  margin-left: 30px;
+  color:#f4f4f4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav a:hover {
+  color: var(--neon-black);
+  text-shadow: 0 0 10px var(--neon-white);
+}
+    
+    /* Toggle button styles */
+    .mode-toggle {
+      background: none;
+      border: 2px solid #f4f4f4;
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.1s, color 0.1s;
+      
+    }
+    
+    
+    /* Neon colors */
+:root {
+  --neon-white: #ffffff;
+  --neon-black: black ;
+
+}
+
+
+/* Neon glow effect */
+    section-title {
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #0ff,
+        0 0 30px #0ff,
+        0 0 40px #0ff,
+        0 0 55px #0ff,
+        0 0 75px #0ff;
+    }
+
+    
+    
+    /* Section styles */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2em;
+      color: #000;
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    } 
+
+
+    /* About section */
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 700px;
+      font-size: 1.2em;
+      color:#000
+
+    }
+
+/* Experience & Education & Certification & Projects & Contact styles */
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #f4f4f4;
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid #000;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+}
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow:
+        0 0 20px #f4f4f4,
+        0 0 30px #f4f4f4 inset;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: black;
+      border-bottom: 1px solid #000;
+      padding-bottom: 10px;
+    }
+    
+
+    /* List styles */
+    ul {
+      list-style: none;
+      
+    }
+    
+    li {
+      margin-bottom: 10px;
+      color: black;
+
+    }
+    
+
+    /* Projects images */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .project-card {
+      background: #f4f4f4;
+      border: 2px solid #000;
+      border-radius: 10px;
+      width: 400px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      color:#000;
+    }
+    
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow:
+        0 0 10px #000;
+    }
+    
+
+    .project-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+
+
+/* Skills */
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.skill li {
+  margin-bottom: 8px;
+  color:#000;
+  font-size: 1.2rem;
+}
+.skill-bar {
+  width: 100%;
+  height: 20px;
+  background:#555;
+  border-radius: 10px;
+  overflow: hidden;
+  
+}
+.skill-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+}
+
+.skill-fill.html {
+  background-color: var(--neon-black);
+}
+
+.skill-fill.css {
+  background-color: var(--neon-black);
+}
+
+.skill-fill.js {
+  background-color: var(--neon-black);
+} 
+
+.skill-fill.Python {
+  background-color: var(--neon-black);
+}
+
+.skill-fill.JAVA {
+  background-color: var(--neon-black);
+}
+
+.skill-fill.C {
+  background-color: var(--neon-black);
+}
+
+/*Certificates Styles */
+
+.card p
+{
+  color: #000;
+}
+
+
+/* Contact styles */
+  
+  #contact p{
+    text-align: center;
+    color: black;
+  }
+
+  
+
+  .contact a {
+    display: inline-block;
+    margin: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color:#555;
+    transition: background 0.3s;
+    }
+
+    
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color:#fff;
+      color: #555;
+    }
+
+    /* Responsive adjustments */
+    @media(max-width: 768px){
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      .about {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="title">Pravallika Kasireddy</h1>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="mode-toggle" id="modeToggle" aria-label="Toggle Dark Mode">🌙</button>
+  </header>
+  
+  
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <h2 class="section-title">About Me</h2>
+    
+    <p>
+      Hello! I'm a passionate developer with a love for creating vibrant and dynamic web experiences. Welcome to my neon-themed portfolio showcasing my skills, projects, and certifications.
+    </p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Frontend Web Development Intern</h3>
+        <ul>
+          <li>DevSkillHub (2024 - Present)</li>
+          <li>Developed Coming Soon Landing Page</li>
+          <li>Worked with HTML, CSS, JavaScript</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>DataScience Intern</h3>
+        <ul>
+          <li>Grafx IT Solutions (2021)</li>
+          <li>Assisted in Datascience using python</li>
+          <li>Learned Logistic Regression,SVM,ANNs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="project1.jpeg" alt="Project 1" />
+        <div class="project-details">
+          <h3>Network Security Auditing Tool</h3>
+          <p>Designed a web-based Tool using JAVA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Frontend</h3>
+        <ul>
+          <div class="skill">
+            <li>HTML</li>
+              <div class="skill-bar">
+                <div class="skill-fill html"></div>
+              </div>
+          </div>
+          <div class="skill">
+            <li>css</li>
+              <div class="skill-bar">
+                <div class="skill-fill css"></div>
+              </div>
+          </div>
+          <div class="skill">
+            <li>JavaScript</li>
+              <div class="skill-bar">
+                <div class="skill-fill js"></div>
+              </div>
+          </div>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Programming Skills</h3>
+        <ul>
+          <div class="skill">
+            <li>Python</li>
+              <div class="skill-bar">
+                <div class="skill-fill Python"></div>
+              </div>
+          </div>
+          <div class="skill">
+            <li>JAVA</li>
+              <div class="skill-bar">
+                <div class="skill-fill JAVA"></div>
+              </div>
+          </div>
+          <div class="skill">
+            <li>C</li>
+              <div class="skill-bar">
+                <div class="skill-fill C"></div>
+              </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification Section -->
+  <section id="certification">
+    <h2 class="section-title">Certificates</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Introduction to Data Analytics</h3>
+        <p>Issued by Simplilearn in 2025</p>
+      </div>
+      <div class="card">
+        <h3>Certified Frontend Web Development</h3>
+        <p>Issued by DevSkillHub in 2024</p>
+      </div>
+      <div class="card">
+        <h3>Data Science Using Python</h3>
+        <p>Issued by GIT Solutions in 2023</p>
+      </div>
+      <div class="card">
+        <h3>HTML & CSS</h3>
+        <p>Issued by bitLabs in 2023</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Bachelor Of Technology In Computer Science</h3>
+        <p>Adarsh College Of Engineering, 2022 - 2025,Chebrolu</p>
+      </div>
+      <div class="card">
+        <h3>Diploma in Electronics And Communication Engineering</h3>
+        <p>Government Polytechnic For Women, 2018 - 2021</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Me Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p>I'm open for freelance work and collaborations. Reach out via:</p>
+    <section style="text-align: center;", class="contact">
+  <a href="mailto:pravallikasireddy2003@gmail.com" target="_blank">Email</a>
+  <a href="https://www.linkedin.com/in/pravallika-kasireddy-483758346/" target="_blank">LinkedIn</a>
+  <a href="https://github.com/pravallikasireddy" target="_blank">GitHub</a>  
+  </section>
+</section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Pravallika Kasireddy. All rights reserved.</p>
+  </footer>
+
+
+<script>
+    // Animate skill bars when section is in view
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsSection = document.getElementById('skills');
+  const skillFills = document.querySelectorAll('.skill-fill');
+
+  const observerOptions = {
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Animate each skill fill to a certain width
+        skillFills.forEach(fill => {
+          let widthPercent = 0;
+          switch (fill.classList[1]) {
+            case 'html':
+              widthPercent = 90;
+              break;
+            case 'css':
+              widthPercent = 85;
+              break;
+            case 'js':
+              widthPercent = 75;
+              break;
+            case 'Python':
+              widthPercent = 90;
+              break;
+            case 'JAVA':
+              widthPercent = 85;
+              break;
+            case 'C':
+              widthPercent = 65;
+              break;
+            default:
+              widthPercent = 50;  
+          }
+          fill.style.width = widthPercent + '%';
+        });
+        observer.disconnect();
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(skillsSection);
+});
+// Toggle dark/light mode
+    const modeToggle = document.getElementById('modeToggle');
+    const body = document.body;
+
+    modeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      // Change icon based on mode
+      if (body.classList.contains('dark-mode')) {
+        modeToggle.textContent = '☀️';
+      } else {
+        modeToggle.textContent = '🌙';
+      }
+    });
+</script>
+</body>
+</html>
