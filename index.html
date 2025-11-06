@@ -179,19 +179,17 @@ body.dark-mode footer {
   --neon-white: #ffffff;
   --neon-black: black ;
 
-
+}
 
 
 /* Neon glow effect */
-    section-title {
-      text-shadow:
-        0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 20px #0ff,
-        0 0 30px #0ff,
-        0 0 40px #0ff,
-        0 0 55px #0ff,
-        0 0 75px #0ff;
+  .section-title {
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #0ff;
+}
+
     }
 
     
@@ -250,7 +248,6 @@ body.dark-mode footer {
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-}
     .card:hover {
       transform: translateY(-10px);
       box-shadow:
@@ -531,22 +528,22 @@ body.dark-mode footer {
       <div class="card">
         <h3>Introduction to Data Analytics</h3>
         <p>Issued by Simplilearn in 2025</p><br>
-        <p><a href="https://drive.google.com/file/d/1HEcsbcpnL1tlUQ9_gaEa_qp0ZV4L56bN/view?usp=sharing">View</a></p>
+        <p><a href="https://drive.google.com/file/d/1HEcsbcpnL1tlUQ9_gaEa_qp0ZV4L56bN/view?usp=sharing" target="_blank">View</a></p>
       </div>
       <div class="card">
         <h3>Certified Frontend Web Development</h3>
         <p>Issued by DevSkillHub in 2024</p><br>
-        <p><a href="https://drive.google.com/file/d/1J4JQaHmsrQshSwm2T8_uMZ61b6brWskx/view?usp=sharing">View</a></p>
+        <p><a href="https://drive.google.com/file/d/1J4JQaHmsrQshSwm2T8_uMZ61b6brWskx/view?usp=sharing" target="_blank">View</a></p>
       </div>
       <div class="card">
         <h3>Data Science Using Python</h3>
         <p>Issued by GIT Solutions in 2023</p><br>
-        <p><a href="https://drive.google.com/file/d/1vu7e-DvNCuWHHLDtO1gpzSWZBTJ-mmo1/view?usp=sharing">View</a></p>
+        <p><a href="https://drive.google.com/file/d/1vu7e-DvNCuWHHLDtO1gpzSWZBTJ-mmo1/view?usp=sharing" target="_blank">View</a></p>
       </div>
       <div class="card">
         <h3>HTML & CSS</h3>
         <p>Issued by bitLabs in 2023</p><br>
-        <p><a href="https://drive.google.com/file/d/1A2MEuf340g6mPaC_RDDscZnfyX1kyEKX/view?usp=drive_link">View</a></p>
+        <p><a href="https://drive.google.com/file/d/1A2MEuf340g6mPaC_RDDscZnfyX1kyEKX/view?usp=drive_link" target="_blank">View</a></p>
       </div>
 
     </div>
@@ -569,13 +566,14 @@ body.dark-mode footer {
 
   <!-- Contact Me Section -->
   <section id="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <p>I'm open for freelance work and collaborations. Reach out via:</p>
-    <section style="text-align: center;", class="contact">
-  <a href="mailto:pravallikasireddy2003@gmail.com" target="_blank">Email</a>
-  <a href="https://github.com/pravallikasireddy" target="_blank">Github</a>  
-  </section>
+  <h2 class="section-title">Contact Me</h2>
+  <p>I'm open for freelance work and collaborations. Reach out via:</p>
+  <div class="contact" style="text-align: center;">
+    <a href="mailto:pravallikasireddy2003@gmail.com" target="_blank">Email</a>
+    <a href="https://github.com/pravallikasireddy" target="_blank">Github</a>  
+  </div>
 </section>
+
   <!-- Footer -->
   <footer>
     <p>&copy; Pravallika Kasireddy. All rights reserved.</p>
